@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,7 +24,13 @@ namespace TeduShop.Data.Infrastructure
 
         public void Commit()
         {
-            dbContext.SaveChanges();
+            try
+            {
+                dbContext.SaveChanges();
+            }catch(Exception ex)
+            {
+                Debug.WriteLine("Commit Error: " + ex.Message);
+            }
         }
     }
 }

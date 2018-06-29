@@ -11,7 +11,7 @@ namespace TeduShop.Data
     public class TeduShopDBContext : DbContext
     {
         public TeduShopDBContext() : base("TeduShopConnection")
-        {
+      {
             //Load bảng cha ko load bảng con
             this.Configuration.LazyLoadingEnabled = false;
         }
