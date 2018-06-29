@@ -7,10 +7,9 @@ using TeduShop.Data;
 
 namespace TeduShop.Data.Infrastructure
 {
-    public abstract class RepositoryBase<T> where T : class
+    public abstract class BaseRepository<T> : IRepository<T> where T : class
     {
         #region Properties
-
         private TeduShopDBContext dataContext;
         private readonly IDbSet<T> dbSet;
 
@@ -24,20 +23,18 @@ namespace TeduShop.Data.Infrastructure
         {
             get { return dataContext ?? (dataContext = DbFactory.Init()); }
         }
+        #endregion
 
-        #endregion Properties
-
-        protected RepositoryBase(IDbFactory dbFactory)
+        protected BaseRepository(IDbFactory dbFactory)
         {
             DbFactory = dbFactory;
             dbSet = DbContext.Set<T>();
         }
 
         #region Implementation
-
-        public virtual void Add(T entity)
+        public virtual T Add(T entity)
         {
-            dbSet.Add(entity);
+            return dbSet.Add(entity);
         }
 
         public virtual void Update(T entity)
@@ -46,17 +43,15 @@ namespace TeduShop.Data.Infrastructure
             dataContext.Entry(entity).State = EntityState.Modified;
         }
 
-        public virtual void Delete(T entity)
+        public virtual T Delete(T entity)
         {
-            dbSet.Remove(entity);
+            return dbSet.Remove(entity);
         }
-
-        public virtual void Delete(int id)
+        public virtual T Delete(int id)
         {
             var entity = dbSet.Find(id);
-            dbSet.Remove(entity);
+            return dbSet.Remove(entity);
         }
-
         public virtual void DeleteMulti(Expression<Func<T, bool>> where)
         {
             IEnumerable<T> objects = dbSet.Where<T>(where).AsEnumerable();
@@ -73,6 +68,7 @@ namespace TeduShop.Data.Infrastructure
         {
             return dbSet.Where(where).ToList();
         }
+
 
         public virtual int Count(Expression<Func<T, bool>> where)
         {
@@ -146,7 +142,6 @@ namespace TeduShop.Data.Infrastructure
         {
             return dataContext.Set<T>().Count<T>(predicate) > 0;
         }
-
-        #endregion Implementation
+        #endregion
     }
 }
