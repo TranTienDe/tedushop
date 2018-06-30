@@ -26,7 +26,7 @@ namespace TeduShop.Data.Infrastructure
         {
             try
             {
-                dbContext.SaveChanges();
+                DBContext.SaveChanges();
             }catch(Exception ex)
             {
                 Debug.WriteLine("Commit Error: " + ex.Message);
