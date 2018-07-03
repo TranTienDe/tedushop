@@ -8,7 +8,7 @@ using TeduShop.Web.Infrastructure.Core;
 
 namespace TeduShop.Web.Api
 {
-    [RoutePrefix("api/postCategory")]
+    [RoutePrefix("api/postcategory")]
     public class PostCategoryController : BaseApiController
     {
         IPostCategoryService _postCategoryService;
@@ -18,7 +18,7 @@ namespace TeduShop.Web.Api
             _postCategoryService = postCategoryService;
         }
 
-        [Route("getAll")]
+        [Route("getall")]
         public HttpResponseMessage Get(HttpRequestMessage request)
         {
             return CreateHttpResponse(request, () =>
