@@ -23,14 +23,8 @@ namespace TeduShop.Data.Infrastructure
         }
 
         public void Commit()
-        {
-            try
-            {
-                DBContext.SaveChanges();
-            }catch(Exception ex)
-            {
-                Debug.WriteLine("Commit Error: " + ex.Message);
-            }
+        {           
+            DBContext.SaveChanges();            
         }
     }
 }

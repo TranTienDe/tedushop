@@ -201,11 +201,10 @@
     <Content Include="Views\Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="app\" />
     <Folder Include="Assets\admin\" />
     <Folder Include="Assets\client\" />
     <Folder Include="Infrastructure\Extensions\" />
-    <Folder Include="Scripts\plugins\" />
-    <Folder Include="Scripts\spa\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
