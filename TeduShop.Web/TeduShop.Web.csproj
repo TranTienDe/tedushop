@@ -179,6 +179,13 @@
     </Compile>
     <Compile Include="Infrastructure\Core\BaseApiController.cs" />
     <Compile Include="Mappings\AutoMapperConfiguration.cs" />
+    <Compile Include="Models\PostCategoryViewModel.cs" />
+    <Compile Include="Models\PostTagViewModel.cs" />
+    <Compile Include="Models\PostViewModel.cs" />
+    <Compile Include="Models\ProductCategoryViewModel.cs" />
+    <Compile Include="Models\ProductTagViewModel.cs" />
+    <Compile Include="Models\ProductViewModel.cs" />
+    <Compile Include="Models\TagViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -197,7 +204,6 @@
     <Folder Include="Assets\admin\" />
     <Folder Include="Assets\client\" />
     <Folder Include="Infrastructure\Extensions\" />
-    <Folder Include="Models\" />
     <Folder Include="Scripts\plugins\" />
     <Folder Include="Scripts\spa\" />
   </ItemGroup>
