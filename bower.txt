@@ -1,0 +1,26 @@
+1.Install nodejs
+2.Install bower
+3.Download angular from github
+https://github.com/angular/bower-angular
+cmd> bower install angular
+ 
+4.Download angular from github
+https://github.com/angular-ui/ui-router
+https://www.npmjs.com/package/angular-ui-router
+cmd> bower i angular-ui-router
+
+5.Download jQuery
+https://jquery.com/download/
+cmd> bower install jquery
+
+6.Download bootstrap
+https://getbootstrap.com/docs/3.3/getting-started/
+cmd> bower install bootstrap
+
+7.Download jQuery-slimScroll
+https://libraries.io/bower/jquery-slimScroll
+cmd> bower install jquery-slimScroll
+
+8.Downlaod fastclick
+https://github.com/ftlabs/fastclick
+cmd> bower install fastclick
