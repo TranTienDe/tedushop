@@ -1,6 +1,4 @@
 ﻿/// <reference path="/Assets/admin/libs/angular/angular.js" />
-
-
 (function () {
     angular.module('tedushop.product_categories', ['tedushop.common']).config(config);
 

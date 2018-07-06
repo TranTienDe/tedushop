@@ -1,7 +1,7 @@
 ﻿(function (app) {
     app.controller('productCategoryListController', productCategoryListController);
 
-    productCategoryListController.$inject = ['$scope','apiService'];
+    productCategoryListController.$inject = ['$scope', 'apiService'];
 
     function productCategoryListController($scope, apiService) {
 
