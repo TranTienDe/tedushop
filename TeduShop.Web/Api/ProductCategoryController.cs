@@ -19,8 +19,7 @@ namespace TeduShop.Web.Api
             _productCategoryService = productCategoryService;
         }
 
-        [Route("getall")]
-        [HttpGet]
+        [Route("getall")]       
         public HttpResponseMessage GetAll(HttpRequestMessage request)
         {
             return CreateHttpResponse(request, () => 

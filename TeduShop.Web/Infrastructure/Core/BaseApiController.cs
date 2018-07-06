@@ -67,6 +67,7 @@ namespace TeduShop.Web.Infrastructure.Core
             }
             catch
             {
+                Debug.WriteLine("Error on func LogError:" + ex.Message);
             }
         }
 

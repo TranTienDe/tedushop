@@ -3,7 +3,7 @@ namespace TeduShop.Data.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class tedushopDBwin7 : DbMigration
+    public partial class AddDatabase : DbMigration
     {
         public override void Up()
         {

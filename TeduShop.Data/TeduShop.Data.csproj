@@ -56,9 +56,9 @@
     <Compile Include="Infrastructure\IUnitOfWork.cs" />
     <Compile Include="Infrastructure\BaseRepository.cs" />
     <Compile Include="Infrastructure\UnitOfWork.cs" />
-    <Compile Include="Migrations\201807040859139_tedushopDBwin7.cs" />
-    <Compile Include="Migrations\201807040859139_tedushopDBwin7.Designer.cs">
-      <DependentUpon>201807040859139_tedushopDBwin7.cs</DependentUpon>
+    <Compile Include="Migrations\201807060412046_AddDatabase.cs" />
+    <Compile Include="Migrations\201807060412046_AddDatabase.Designer.cs">
+      <DependentUpon>201807060412046_AddDatabase.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -97,8 +97,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201807040859139_tedushopDBwin7.resx">
-      <DependentUpon>201807040859139_tedushopDBwin7.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201807060412046_AddDatabase.resx">
+      <DependentUpon>201807060412046_AddDatabase.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

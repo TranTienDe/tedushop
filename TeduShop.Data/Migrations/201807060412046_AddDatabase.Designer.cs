@@ -7,13 +7,13 @@ namespace TeduShop.Data.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class tedushopDBwin7 : IMigrationMetadata
+    public sealed partial class AddDatabase : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(tedushopDBwin7));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(AddDatabase));
         
         string IMigrationMetadata.Id
         {
-            get { return "201807040859139_tedushopDBwin7"; }
+            get { return "201807060412046_AddDatabase"; }
         }
         
         string IMigrationMetadata.Source
