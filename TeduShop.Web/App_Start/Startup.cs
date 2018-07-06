@@ -39,12 +39,12 @@ namespace TeduShop.Web.App_Start
             //Repositories
             builder.RegisterAssemblyTypes(typeof(PostCategoryRepository).Assembly)
                 .Where(t => t.Name.EndsWith("Repository"))
-                .AsImplementedInterfaces().InstancePerRequest();
+                .AsImplementedInterfaces().InstancePerRequest();           
 
             //Service
             builder.RegisterAssemblyTypes(typeof(PostCategoryService).Assembly)
                 .Where(t => t.Name.EndsWith("Service"))
-                .AsImplementedInterfaces().InstancePerRequest();
+                .AsImplementedInterfaces().InstancePerRequest();           
 
             //Đăng ký xong sẽ đưa vào thùng chứa
             Autofac.IContainer container = builder.Build();
