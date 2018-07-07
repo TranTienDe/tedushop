@@ -307,8 +307,6 @@
     <Content Include="Assets\admin\libs\angular-sanitize\angular-sanitize.js" />
     <Content Include="Assets\admin\libs\angular-sanitize\angular-sanitize.min.js" />
     <Content Include="Assets\admin\libs\angular-sanitize\index.js" />
-    <Content Include="Assets\admin\libs\angular-ui-router\release\angular-ui-router.js" />
-    <Content Include="Assets\admin\libs\angular-ui-router\release\angular-ui-router.min.js" />
     <Content Include="Assets\admin\libs\angular-ui-router\src\common.js" />
     <Content Include="Assets\admin\libs\angular-ui-router\src\resolve.js" />
     <Content Include="Assets\admin\libs\angular-ui-router\src\state.js" />
@@ -6294,6 +6292,7 @@
     <Folder Include="app\shared\footer\" />
     <Folder Include="app\shared\navigation\" />
     <Folder Include="Assets\admin\js\pages\" />
+    <Folder Include="Assets\admin\libs\angular-ui-router\release\" />
     <Folder Include="Assets\admin\libs\checklist-model\test\" />
     <Folder Include="Assets\admin\libs\mustache\bin\" />
     <Folder Include="Assets\client\" />
