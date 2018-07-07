@@ -23,33 +23,27 @@ namespace TeduShop.Web.Api
         }
 
         [Route("getall")]
-        public HttpResponseMessage GetAll(HttpRequestMessage request, int page, int pageSize = 20)
+        public HttpResponseMessage GetAll(HttpRequestMessage request, string keyword, int page, int pageSize = 20)
         {
             return CreateHttpResponse(request, () =>
             {
                 HttpResponseMessage response = null;
-                if (!ModelState.IsValid)
-                {
-                    request.CreateErrorResponse(HttpStatusCode.BadRequest, ModelState);
-                }
-                else
-                {
-                    int totalRow = 0;
-                    var model = _postCategoryService.GetAll();
-                    totalRow = model.Count();
-                    var query = model.OrderByDescending(x=>x.CreatedDate).Skip(page * pageSize).Take(pageSize);
+                              
+                int totalRow = 0;
+                var model = _postCategoryService.GetAll(keyword);
+                totalRow = model.Count();
+                var query = model.OrderByDescending(x=>x.CreatedDate).Skip(page * pageSize).Take(pageSize);
 
-                    var responseData = Mapper.Map<IEnumerable<PostCategory>, IEnumerable<PostCategoryViewModel>>(query);
+                var responseData = Mapper.Map<IEnumerable<PostCategory>, IEnumerable<PostCategoryViewModel>>(query);
 
-                    var paginationSet = new PaginationSet<PostCategoryViewModel>() {
-                        Items = responseData,
-                        Page = page,
-                        TotalCount = totalRow,
-                        TotalPage = (int)Math.Ceiling((decimal)totalRow/pageSize)
-                    };
+                var paginationSet = new PaginationSet<PostCategoryViewModel>() {
+                    Items = responseData,
+                    Page = page,
+                    TotalCount = totalRow,
+                    TotalPage = (int)Math.Ceiling((decimal)totalRow/pageSize)
+                };
 
-                    response = request.CreateResponse(HttpStatusCode.OK, paginationSet);
-                }
+                response = request.CreateResponse(HttpStatusCode.OK, paginationSet);                
                 return response;
             });
         }

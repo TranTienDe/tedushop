@@ -3,7 +3,10 @@
     app.filter('statusFilter', function () {
 
         return function (input) {
-            return input ? 'Kích hoạt' : 'Đã khóa'
+            if (input == true)
+                return 'Kích hoạt';
+            else
+                return 'Đã khóa';
         }
 
     });

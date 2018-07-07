@@ -25,16 +25,11 @@ namespace TeduShop.Web.Api
             return CreateHttpResponse(request, () => 
             {
                 HttpResponseMessage response = null;
-                if (!ModelState.IsValid)
-                {
-                    request.CreateErrorResponse(HttpStatusCode.BadRequest, ModelState);
-                }
-                else
-                {
-                    var model = _productCategoryService.GetAll();
-                    var responeData = Mapper.Map<IEnumerable<ProductCategory>, IEnumerable<ProductCategoryViewModel>>(model);
-                    request.CreateResponse(HttpStatusCode.OK, responeData);
-                }
+               
+                var model = _productCategoryService.GetAll();
+                var responeData = Mapper.Map<IEnumerable<ProductCategory>, IEnumerable<ProductCategoryViewModel>>(model);
+                request.CreateResponse(HttpStatusCode.OK, responeData);
+                
                 return response;
             });
         }
