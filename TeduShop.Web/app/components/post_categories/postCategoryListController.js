@@ -1,9 +1,9 @@
 ﻿(function (app) {
     app.controller('postCategoryListController', postCategoryListController);
 
-    postCategoryListController.$inject = ['$scope', 'apiService'];
+    postCategoryListController.$inject = ['$scope', 'apiService', 'notificationService'];
 
-    function postCategoryListController($scope, apiService) {
+    function postCategoryListController($scope, apiService, notificationService) {
 
         $scope.postCategories = [];
         $scope.page = 0;
@@ -27,6 +27,11 @@
             }
 
             apiService.get('/api/postcategory/getall', config, function (result) {
+                if(result.data.TotalCount == 0){
+                    notificationService.displayWarning('Không có bản ghi nào được tìm thấy.');
+                } else {
+                    notificationService.displaySuccess('Đã tìm thấy ' + result.data.TotalCount + ' bản ghi.');
+                }
                 $scope.postCategories = result.data.Items;
                 $scope.page = result.data.Page;
                 $scope.pagesCount = result.data.TotalPage;
