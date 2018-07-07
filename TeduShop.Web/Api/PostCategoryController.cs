@@ -23,6 +23,7 @@ namespace TeduShop.Web.Api
         }
 
         [Route("getall")]
+        [HttpGet]
         public HttpResponseMessage GetAll(HttpRequestMessage request, string keyword, int page, int pageSize = 20)
         {
             return CreateHttpResponse(request, () =>
@@ -48,8 +49,9 @@ namespace TeduShop.Web.Api
             });
         }
 
-        [Route("add")]
-        public HttpResponseMessage Post(HttpRequestMessage request, PostCategory postCategory)
+        [Route("create")]
+        [HttpPost]
+        public HttpResponseMessage Create(HttpRequestMessage request, PostCategory postCategory)
         {
             return CreateHttpResponse(request, () =>
             {
