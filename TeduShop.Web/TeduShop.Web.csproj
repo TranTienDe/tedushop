@@ -201,6 +201,8 @@
     <Content Include="app\components\post_categories\postCategories.module.js" />
     <Content Include="app\components\post_categories\postCategoryAddController.js" />
     <Content Include="app\components\post_categories\postCategoryAddView.html" />
+    <Content Include="app\components\post_categories\postCategoryEditController.js" />
+    <Content Include="app\components\post_categories\postCategoryEditView.html" />
     <Content Include="app\components\post_categories\postCategoryListController.js" />
     <Content Include="app\components\post_categories\postCategoryListView.html" />
     <Content Include="app\components\products\productAddController.js" />
@@ -217,6 +219,7 @@
     <Content Include="app\shared\modules\tedushop.common.js" />
     <Content Include="app\shared\services\apiService.js" />
     <Content Include="app\shared\filter\statusFilter.js" />
+    <Content Include="app\shared\services\commonService.js" />
     <Content Include="app\shared\services\notificationService.js" />
     <Content Include="Assets\admin\css\AdminLTE.css" />
     <Content Include="Assets\admin\css\AdminLTE.min.css" />
