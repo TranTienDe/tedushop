@@ -23,19 +23,25 @@
                 <div class="form-group">
                     <label class="col-sm-2 control-label">Tên danh mục</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" ng-change="GetSeoTitle()" name="name" ng-model="postCategory.Name">
+                        <input type="text" class="form-control" required ng-maxlength="256" ng-change="GetSeoTitle()" name="name" ng-model="postCategory.Name">
+                        <span ng-show="frmUpdatePostCategory.name.$invalid" class="has-error">Phải nhập tên danh mục.</span>
+                        <span ng-show="frmUpdatePostCategory.name.$error.maxlength" class="has-error">Tên danh mục chỉ được 256 ký tự</span>
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="col-sm-2 control-label">Tiêu đề SEO</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" name="alias" ng-model="postCategory.Alias">
+                        <input type="text" class="form-control" required ng-maxlength="256" name="alias" ng-model="postCategory.Alias">
+                        <span ng-show="frmUpdatePostCategory.alias.$invalid" class="has-error">Phải nhập tiêu đề SEO.</span>
+                        <span ng-show="frmUpdatePostCategory.alias.$error.maxlength" class="has-error">Tiêu đề SEO chỉ được 256 ký tự</span>
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="col-sm-2 control-label">Mô tả ngắn</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" name="description" ng-model="postCategory.Description">
+                        <input type="text" class="form-control" required ng-maxlength="500" name="description" ng-model="postCategory.Description">
+                        <span ng-show="frmUpdatePostCategory.description.$invalid" class="has-error">Phải nhập mô tả ngắn.</span>
+                        <span ng-show="frmUpdatePostCategory.description.$error.maxlength" class="has-error">Mô tả ngắn chỉ được 500 ký tự</span>
                     </div>
                 </div>
                 <div class="form-group">
@@ -56,7 +62,8 @@
                 <div class="form-group">
                     <label class="col-sm-2 control-label">Hình ảnh</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" name="image" ng-model="postCategory.Image">
+                        <input type="text" class="form-control" ng-maxlength="256" name="image" ng-model="postCategory.Image">
+                        <span ng-show="frmUpdatePostCategory.image.$error.maxlength" class="has-error">Hình ảnh chỉ được 256 ký tự</span>
                     </div>
                 </div>
                 <div class="form-group">
@@ -93,7 +100,7 @@
             <!-- /.box-body -->
             <div class="box-footer">
                 <button ui-sref="post_categories" class="btn btn-default">Hủy</button>
-                <button type="submit" class="btn btn-success pull-right">Lưu lại</button>
+                <button type="submit" ng-disabled="frmUpdatePostCategory.$invalid" class="btn btn-success pull-right">Lưu lại</button>
             </div>
             <!-- /.box-footer -->
         </form>

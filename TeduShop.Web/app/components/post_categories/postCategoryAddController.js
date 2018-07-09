@@ -6,8 +6,7 @@
     function postCategoryAddController(apiService, $scope, notificationService, $state) {
         $scope.postCategory = {
             CreatedDate: new Date(),
-            Status: true,
-            Name: "Danh mục 1"
+            Status: true
         }
 
         $scope.AddPostCategory = AddPostCategory;
